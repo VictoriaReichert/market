@@ -1,0 +1,20 @@
+<form method="GET" class="search-form">
+    <div class="search-box">
+        <input type="text" name="search" placeholder="Поиск по названию ярмарки..." value="<?= htmlspecialchars($search) ?>">
+    </div>
+
+    <div class="sort-options">
+        <label for="sort-select">Сортировка:</label>
+        <select name="sort" id="sort-select" onchange="this.form.submit()">
+            <option value="openingDate" <?= $sort == 'openingDate' ? 'selected' : '' ?>>По дате открытия</option>
+            <option value="name" <?= $sort == 'name' ? 'selected' : '' ?>>По названию (А-Я)</option>
+            <option value="name DESC" <?= $sort == 'name DESC' ? 'selected' : '' ?>>По названию (Я-А)</option>
+            <option value="closingDate" <?= $sort == 'closingDate' ? 'selected' : '' ?>>По дате закрытия</option>
+        </select>
+    </div>
+
+    <div class="show-past">
+        <input type="checkbox" id="show_past" name="show_past" value="1" <?= $showPast ? 'checked' : '' ?> onchange="this.form.submit()">
+        <label for="show_past">Показать прошедшие ярмарки</label>
+    </div>
+</form>

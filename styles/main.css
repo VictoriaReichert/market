@@ -1,0 +1,908 @@
+/* Основные стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Шапка */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 50px;
+}
+
+/* Меню пользователя */
+.user-menu {
+    position: relative;
+}
+
+.login-btn {
+    background-color: #96bddc;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.account-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.account-dropdown.active .dropdown-content {
+    display: block;
+}
+
+.account-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.account-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.account-dropdown.active .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-content i {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+/* Секция с ярмарками */
+main {
+    padding: 30px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.markets-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.markets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.market-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.market-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.market-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.market-info {
+    padding: 20px;
+}
+
+.market-dates {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.market-description {
+    color: #555;
+    margin: 10px 0 15px;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    background-color: #96bddc;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.learn-more-btn:hover {
+    background-color: #5392c5;
+}
+
+/* Подвал */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .markets-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Фильтры и поиск */
+.filters-container {
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 20px;
+ 
+}
+
+.search-box {
+    display: flex;
+    flex-grow: 1;
+    max-width: 400px;
+    position: relative;
+}
+
+.search-box input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+}
+
+.search-box button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #2980b9;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-options select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.market-card.hide, 
+.market-card[style*="display: none"] {
+    display: none !important;
+}
+
+/* Обновим стили для поиска */
+.search-box input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Улучшенные стили для фильтров */
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    flex-grow: 1;
+    max-width: 400px;
+    position: relative;
+}
+
+.search-box input {
+    flex-grow: 1;
+    padding: 12px 20px;
+    padding-right: 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    border-color: #96bddc;
+    outline: none;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 2px solid #e0e0e0;
+}
+
+.sort-options:hover {
+    border-color: #96bddc;
+}
+
+.sort-options label {
+    font-weight: 500;
+    color: #555;
+    white-space: nowrap;
+}
+
+.sort-options select {
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c3e50;
+    cursor: pointer;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 14px;
+    padding-right: 30px;
+}
+
+.sort-options select:focus {
+    outline: none;
+}
+
+.show-past {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.show-past:hover {
+    border-color: #96bddc;
+}
+
+.show-past input {
+    width: 18px;
+    height: 18px;
+    accent-color: #96bddc;
+    cursor: pointer;
+}
+
+.show-past label {
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .sort-options, .show-past {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.markets-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    width: 100%; /* Добавляем полную ширину */
+    padding: 0 20px; /* Добавляем отступы по бокам */
+    box-sizing: border-box; /* Учитываем padding в ширине */
+}
+
+/* Навигация разделов -------------------------------------------------------------------------------------------------------------------------*/
+/*Переменные для главных цветов сайта*/
+:root {
+    --main-bg-color: rgb(66, 66, 66); /*rgb(164, 114, 189);*/
+    --secondary-color: rgb(0, 0, 0);/*rgb(117, 13, 169);*/
+}
+a {
+    text-decoration: none;
+    color: var(--main-bg-color);
+}
+nav{
+    font-size: 1.6rem;
+    /* color: var(--main-bg-color);  */
+    text-decoration: none;
+}
+
+/*Подчёркивание разделов*/
+.menuButton {                                
+	position: relative;}
+.menuButton::before {
+	content: '';
+	position: absolute;
+	left: 0; bottom: -5px;
+	width:100%;
+	height: 1.5px;
+	background-color: #ffffff;
+    transition: background-color 0.35s;
+}
+.menuButton:hover:before {
+	width: 100%;
+    background-color: var(--secondary-color);}
+
+/*Подчёркивание текущего раздела*/
+.menuButtonCur {                                
+	position: relative;}
+.menuButtonCur::before {
+	content: '';
+	position: absolute;
+	left: 0; bottom: -5px;
+	width:100%;
+	height: 1.5px;
+	background-color: var(--secondary-color);
+    transition: background-color 0.35s;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/* Стили для разделов с ролями */
+.role-section {
+    margin-bottom: 40px;
+}
+
+.role-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #96bddc;
+}
+
+.no-markets-message {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 16px;
+    padding: 20px;
+    grid-column: 1 / -1;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .role-section {
+        margin-bottom: 30px;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+.requests-container {
+    margin: 30px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.requests-section {
+    margin-bottom: 40px;
+}
+
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.requests-table th, .requests-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.requests-table th {
+    background-color: #96bddc;
+    color: white;
+    font-weight: 500;
+}
+
+.requests-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    background-color: #96bddc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: #7aa8d1;
+}
+
+.status-pending {
+    color: #e67e22;
+    font-weight: 500;
+}
+
+.status-accepted {
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.status-rejected {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+.new-request-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group select, .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #96bddc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #7aa8d1;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+    border-bottom: 3px solid #96bddc;
+    font-weight: 500;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+ /* Стили для отзывов */
+.reviews-section {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.average-rating {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.rating-stars {
+    color: #ffc107;
+    font-size: 24px;
+}
+
+.review-form {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.rating-select {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.rating-select select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.submit-review {
+    background-color: #96bddc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-review:hover {
+    background-color: #7aa8d1;
+}
+
+.reviews-list {
+    margin-top: 30px;
+}
+
+.review-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.review-date {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.review-rating {
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    color: #555;
+    line-height: 1.6;
+}
+
+.no-reviews {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 20px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+.cart-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.market-group {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.market-header-cart {
+    background-color: #96bddc;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-items {
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.item-seller {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+}
+
+.item-quantity {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.market-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.total-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+    color: #7f8c8d;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+.seller-group {
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.seller-header-cart {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.seller-total {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.checkout-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #45a049;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+.orders-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.market-group {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+.market-header-history {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+.order {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.order-status {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.status-завершён { background-color: #d4edda; color: #155724; }
+.status-отменён { background-color: #f8d7da; color: #721c24; }
+.status-забронирован { background-color: #fff3cd; color: #856404; }
+.status-создано { background-color: #d1ecf1; color: #0c5460; }
+.order-details {
+    margin-top: 10px;
+}
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+}
+.order-total {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: right;
+}

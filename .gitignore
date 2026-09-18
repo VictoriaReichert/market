@@ -1,0 +1,12 @@
+# Игнорировать всё содержимое папок
+BACKUP/
+draft/
+marketSellersMedia/
+marketsMedia/
+media/
+
+# Игнорировать конкретный конфиг-файл
+config/config.ini
+
+# Игнорировать все файлы с расширением .docx
+*.docx

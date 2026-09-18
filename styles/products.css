@@ -1,0 +1,173 @@
+/* Стили для страницы товаров */
+
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.products-header h1 {
+    color: #2c3e50;
+    margin: 0;
+}
+
+.add-product-btn {
+    background-color: #96bddc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.add-product-btn:hover {
+    background-color: #5392c5;
+}
+
+
+
+.edit-btn, .delete-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: #3498db;
+}
+
+.edit-btn:hover {
+    background-color: #2980b9;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+
+
+/* Фильтры */
+.filters-container {
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    flex-grow: 1;
+    max-width: 400px;
+    position: relative;
+}
+
+.search-box input {
+    flex-grow: 1;
+    padding: 12px 20px;
+    padding-right: 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    border-color: #96bddc;
+    outline: none;
+}
+
+.search-box button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #96bddc;
+    cursor: pointer;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 2px solid #e0e0e0;
+}
+
+.sort-options:hover {
+    border-color: #96bddc;
+}
+
+.sort-options label {
+    font-weight: 500;
+    color: #555;
+    white-space: nowrap;
+}
+
+.sort-options select {
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c3e50;
+    cursor: pointer;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 14px;
+    padding-right: 30px;
+}
+
+.sort-options select:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .products-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .sort-options {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
